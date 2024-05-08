@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --layout-header-height: calc(16px * 4);
+    --layout-sidebar-nav-width: calc(16px * 14);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+}
+
+#app {
+  @apply h-screen w-screen overflow-y-auto overflow-x-hidden p-6;
+}

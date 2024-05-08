@@ -1,72 +1,103 @@
 <template>
-  <section>
-    <h1 class="text-3xl font-bold underline">Homeapp is ready!</h1>
+  <DefaultLayout>
+    <section>
+      <h1 class="text-3xl font-bold underline">Homeapp is ready!</h1>
 
-    <Popover v-slot="{ open }" class="relative">
-      <PopoverButton
-        class="border group inline-flex items-center rounded-md px-3 py-2 text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
-      >
-        <span>Solutions</span>
-        <ChevronDownIcon
-          :class="open ? 'text-orange-300' : 'text-orange-300/70'"
-          class="ml-2 h-5 w-5 transition duration-150 ease-in-out group-hover:text-orange-300/80"
-          aria-hidden="true"
-        />
-      </PopoverButton>
+      <Popover v-slot="{ open }" class="relative">
+        <PopoverButton
+          class="group inline-flex items-center rounded-md border px-3 py-2 text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+        >
+          <span>Solutions</span>
+          <ChevronDownIcon
+            :class="open ? 'text-orange-300' : 'text-orange-300/70'"
+            class="ml-2 h-5 w-5 transition duration-150 ease-in-out group-hover:text-orange-300/80"
+            aria-hidden="true"
+          />
+        </PopoverButton>
 
-      <transition
-        enter-active-class="transition duration-200 ease-out"
-        enter-from-class="translate-y-1 opacity-0"
-        enter-to-class="translate-y-0 opacity-100"
-        leave-active-class="transition duration-150 ease-in"
-        leave-from-class="translate-y-0 opacity-100"
-        leave-to-class="translate-y-1 opacity-0"
-      >
-        <PopoverPanel class="absolute left-0 z-10 mt-3 transform">
-          <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5 border">
-            <div class="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
-              <a
-                v-for="item in solutions"
-                :key="item.name"
-                :href="item.href"
-                class="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
-              >
-                <div
-                  class="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12"
+        <transition
+          enter-active-class="transition duration-200 ease-out"
+          enter-from-class="translate-y-1 opacity-0"
+          enter-to-class="translate-y-0 opacity-100"
+          leave-active-class="transition duration-150 ease-in"
+          leave-from-class="translate-y-0 opacity-100"
+          leave-to-class="translate-y-1 opacity-0"
+        >
+          <PopoverPanel class="absolute left-0 z-10 mt-3 transform">
+            <div class="overflow-hidden rounded-lg border shadow-lg ring-1 ring-black/5">
+              <div class="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
+                <a
+                  v-for="item in solutions"
+                  :key="item.name"
+                  :href="item.href"
+                  class="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
                 >
-                  <div v-html="item.icon"></div>
-                </div>
-                <div class="ml-4">
-                  <p class="text-sm font-medium text-gray-900">
-                    {{ item.name }}
-                  </p>
-                  <p class="text-sm text-gray-500">
-                    {{ item.description }}
-                  </p>
-                </div>
-              </a>
+                  <div
+                    class="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12"
+                  >
+                    <div v-html="item.icon"></div>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-sm font-medium text-gray-900">
+                      {{ item.name }}
+                    </p>
+                    <p class="text-sm text-gray-500">
+                      {{ item.description }}
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="bg-gray-50 p-4">
+                <a
+                  href="##"
+                  class="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
+                >
+                  <span class="flex items-center">
+                    <span class="text-sm font-medium text-gray-900"> Documentation </span>
+                  </span>
+                  <span class="block text-sm text-gray-500">
+                    Start integrating products and tools
+                  </span>
+                </a>
+              </div>
             </div>
-            <div class="bg-gray-50 p-4">
-              <a
-                href="##"
-                class="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
-              >
-                <span class="flex items-center">
-                  <span class="text-sm font-medium text-gray-900"> Documentation </span>
-                </span>
-                <span class="block text-sm text-gray-500">
-                  Start integrating products and tools
-                </span>
-              </a>
-            </div>
-          </div>
-        </PopoverPanel>
-      </transition>
-    </Popover>
-  </section>
+          </PopoverPanel>
+        </transition>
+      </Popover>
+    </section>
+
+    <p v-for="i in 50" :key="i">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid corporis deleniti,
+      doloremque eos exercitationem fugit id laborum molestias necessitatibus neque? Ab architecto
+      aspernatur aut autem commodi culpa ea eaque eligendi esse eum eveniet ex excepturi fugit harum
+      inventore ipsa ipsum laudantium minima molestias non, nulla omnis praesentium quaerat quam
+      recusandae repellat repellendus sapiente tempora tenetur totam unde velit veritatis voluptate!
+      Assumenda corporis dignissimos eligendi eveniet laboriosam nesciunt perspiciatis quaerat
+      ratione reprehenderit similique, soluta temporibus velit? Doloribus dolorum esse et
+      exercitationem illum minus nam tempore. Ab consequuntur eveniet quo. Eaque neque non optio
+      sed? Assumenda distinctio laboriosam molestias perferendis quidem repellendus rerum totam unde
+      voluptatibus! A ad asperiores commodi consequuntur corporis debitis distinctio dolor dolorem
+      hic, id illum ipsa laboriosam laborum magni, necessitatibus nemo perferendis quas qui quod
+      quos ratione reiciendis rem sequi soluta temporibus velit voluptatem! Accusamus adipisci
+      delectus, doloribus error eum fugit illo illum iure iusto laboriosam magni modi provident quo
+      quos saepe sint sunt. Autem et harum nobis, provident quis saepe ut! A accusantium alias at
+      consectetur debitis deleniti, deserunt dolor dolorem, ea eaque facilis ipsa ipsum iste
+      laudantium minima obcaecati perferendis placeat quaerat quas qui ratione rerum sed ut voluptas
+      voluptate. Accusamus animi aperiam blanditiis corporis dolorem dolores dolorum, ducimus eius
+      ex excepturi explicabo fugiat fugit harum id impedit itaque magnam minus molestiae nam nisi
+      odit omnis optio possimus quia quis quod reprehenderit repudiandae similique sit sunt tempora,
+      totam voluptas voluptates? Cum deleniti dolorem labore nemo quae quam quas quibusdam quisquam
+      recusandae tenetur. Aperiam aspernatur commodi, deleniti dolorum ducimus error esse est, hic
+      illum inventore minima modi officia quas quod recusandae sed tenetur unde. Enim eum incidunt
+      iusto magni necessitatibus obcaecati perferendis praesentium rem rerum sint. Ab, aliquid
+      aperiam, asperiores delectus dignissimos doloribus eius exercitationem illum iusto magni
+      molestiae nobis obcaecati quasi quos sunt, tempore temporibus voluptate?
+    </p>
+  </DefaultLayout>
 </template>
 
 <script setup>
+import DefaultLayout from '@/layouts/defaultLayout.vue'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
