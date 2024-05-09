@@ -9,8 +9,7 @@
   }
 
   html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply antialiased grayscale;
   }
 }
 
@@ -18,5 +17,5 @@
 }
 
 #app {
-  @apply h-screen w-screen overflow-y-auto overflow-x-hidden p-6;
+  @apply relative h-screen w-screen overflow-y-auto overflow-x-hidden;
 }
