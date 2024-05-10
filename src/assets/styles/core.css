@@ -9,11 +9,26 @@
   }
 
   html {
-    @apply antialiased grayscale;
+    @apply antialiased;
   }
 }
 
 @layer components {
+  .title-page {
+    @apply text-4xl font-bold text-green-500;
+  }
+
+  .content-section {
+    @apply flex flex-col gap-8 p-8;
+  }
+
+  .content-card {
+    @apply rounded-lg border bg-gray-50 p-8 shadow;
+
+    &--body {
+      @apply flex flex-wrap justify-center gap-4;
+    }
+  }
 }
 
 #app {
